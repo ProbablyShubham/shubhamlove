@@ -17,6 +17,7 @@ const navObserver=new IntersectionObserver(entries=>{
   const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>Math.abs(a.boundingClientRect.top-innerHeight*.35)-Math.abs(b.boundingClientRect.top-innerHeight*.35));
   if(!visible[0])return;
   const id=visible[0].target.id;
+  document.body.dataset.activeSection=id;
   navLinks.forEach(a=>a.classList.toggle("active",a.getAttribute("href")===`#${id}`));
 },{rootMargin:"-28% 0px -62% 0px",threshold:0});
 sections.forEach(s=>navObserver.observe(s));

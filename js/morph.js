@@ -87,10 +87,12 @@ const dot = (x = 210, y = 210) => S([[x, y], [x, y]], { opacity: 0 });
 
 const shapes = {
   baseline: {
+    plate: "00",
     label: "baseline / research",
     make: () => [S(wave(48, 372, 210, 13, 1.35)), dot(), dot(), dot()]
   },
   map: {
+    plate: "01A",
     label: "projects / spatial",
     make: () => {
       const india = [[188,58],[207,70],[220,94],[242,107],[251,130],[238,153],[246,174],[231,192],[226,218],[245,242],[237,270],[218,291],[205,329],[190,353],[181,329],[169,303],[153,287],[146,258],[132,238],[141,211],[127,183],[143,163],[149,135],[165,112],[172,84],[188,58]];
@@ -99,50 +101,62 @@ const shapes = {
     }
   },
   nitrogen: {
+    plate: "01B",
     label: "nitrogen / n₂o",
     make: () => [S(ellipse(210,210,112,48)),S(ellipse(210,210,48,112),{opacity:.72}),S(ellipse(210,210,94,94),{opacity:.4,dash:"2 7"}),S([[128,270],[168,235],[210,250],[252,216],[292,147]],{width:1.7})]
   },
   nexus: {
+    plate: "01C",
     label: "energy ↔ agriculture",
     make: () => [S([[65,210],[155,210],[172,190],[188,230],[205,174],[225,246],[244,210],[355,210]]),S(arc(92,150,328,150,45),{opacity:.55}),S(arc(328,270,92,270,45),{opacity:.55}),dot()]
   },
   packages: {
+    plate: "01D",
     label: "open source / outputs",
     make: () => [S([[76,302],[76,112],[344,112]]),S([[92,285],[145,259],[176,267],[220,211],[260,218],[305,164],[342,145]],{width:1.8}),S([[305,164],[342,145],[325,181]],{opacity:.7}),S([[97,323],[326,323]],{opacity:.3,dash:"2 7"})]
   },
   helix: {
+    plate: "02A",
     label: "biotechnology / origin",
     make: () => { const h=helix(); return [S(h[0]),S(h[1]),S(h[2],{opacity:.35,width:.8}),dot()]; }
   },
   policy: {
+    plate: "02B",
     label: "policy / institutions",
     make: () => [S([[70,300],[70,145],[350,145],[350,300],[70,300]]),S([[105,300],[105,180],[315,180],[315,300]],{opacity:.6}),S([[70,145],[210,76],[350,145]],{opacity:.8}),S([[55,320],[365,320]],{opacity:.5})]
   },
   globe: {
+    plate: "02C",
     label: "penn / environmental studies",
     make: () => [S(ellipse(210,210,118,118)),S(ellipse(210,210,118,34),{opacity:.65}),S(ellipse(210,210,42,118),{opacity:.65}),S([[92,210],[328,210]],{opacity:.45})]
   },
   route: {
+    plate: "02D",
     label: "del → phl / 2024",
     make: () => [S(arc(82,295,330,112,70),{dash:"3 9"}),S(ellipse(82,295,12,12)),S(ellipse(330,112,12,12)),S([[310,126],[330,112],[322,137]],{opacity:.8})]
   },
   atmosphere: {
+    plate: "03",
     label: "observatory / atmosphere",
     make: () => [S(ellipse(210,210,124,124)),S(ellipse(210,210,92,92),{opacity:.72}),S(ellipse(210,210,60,60),{opacity:.48}),S(arc(80,270,340,150,56),{dash:"2 8",opacity:.65})]
   },
   rules: {
+    plate: "04",
     label: "notes / writing",
     make: () => [S([[72,145],[348,145]]),S([[72,197],[348,197]],{opacity:.7}),S([[72,249],[286,249]],{opacity:.45}),S([[72,301],[240,301]],{opacity:.26})]
   },
   stars: {
+    plate: "05A",
     label: "elsewhere / night sky",
     make: () => [S(star(145,146,42)),S(star(283,122,25),{opacity:.75}),S(star(255,267,34),{opacity:.86}),S(star(126,296,20),{opacity:.55})]
   },
   tiger: {
+    plate: "05B",
     label: "first project / tiger",
     make: () => [S([[108,245],[126,185],[160,142],[210,126],[260,142],[294,185],[312,245],[280,296],[232,316],[188,314],[140,294],[108,245]]),S([[147,160],[123,111],[174,137]],{opacity:.7}),S([[273,160],[297,111],[246,137]],{opacity:.7}),S([[170,232],[190,250],[210,236],[230,250],[250,232],[210,294],[170,232]],{opacity:.7})]
   },
   signature: {
+    plate: "06",
     label: "sign-off / sl",
     make: () => {
       const sig=[[153,145],[137,128],[112,130],[99,148],[108,169],[138,183],[155,199],[153,221],[133,238],[108,234],[92,216],[112,240],[144,225],[167,196],[191,159],[218,130],[242,125],[250,143],[241,170],[220,198],[211,228],[220,245],[246,247],[283,228],[322,205]];
@@ -158,6 +172,7 @@ function ease(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;}
 export function initMorph(){
   const paths=[0,1,2,3].map(i=>document.getElementById(`strand-${i}`));
   const label=document.getElementById("plate-state");
+  const plateIndex=document.getElementById("plate-index");
   if(paths.some(p=>!p)) return;
   let current=cloneStrands(shapes.baseline.make());
   let currentName="baseline", raf=null;
@@ -168,7 +183,7 @@ export function initMorph(){
   function setShape(name){
     if(!shapes[name]||name===currentName)return;
     const from=cloneStrands(current),to=shapes[name].make();
-    currentName=name;if(label)label.textContent=shapes[name].label;
+    currentName=name;if(label)label.textContent=shapes[name].label;if(plateIndex)plateIndex.textContent=`Plate ${shapes[name].plate || "00"}`;
     if(reduceMotion){current=cloneStrands(to);paint(current);return;}
     cancelAnimationFrame(raf);
     const start=performance.now(),duration=820;

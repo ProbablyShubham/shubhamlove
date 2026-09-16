@@ -12,7 +12,7 @@ A single-page static portfolio hosted on GitHub Pages.
 - `data/n2o.json` — cached NOAA Global Monitoring Laboratory N2O data
 - `data/latest-post.json` — cached latest post from haevyre.com
 - `scripts/update_data.py` — server-side data refresh used by GitHub Actions
-- `.github/workflows/update-data.yml` — scheduled data refresh workflow
+- `.github/workflows/main.yml` — scheduled data refresh workflow
 
 No framework or build step is required. GitHub Pages can serve the repository root directly.
 
@@ -42,7 +42,7 @@ It is an exploratory climate projection, not a weather forecast.
 3. Push to `main`.
 4. In **Settings → Actions → General**, make sure workflows have permission to read and write repository contents if your repository defaults to read-only workflow permissions.
 5. In **Settings → Pages**, continue serving from the branch/root configuration you already use.
-6. The `Refresh portfolio data` action will run automatically when its workflow/script is first pushed, and can also be run manually from the Actions tab.
+6. The `Refresh portfolio data` action will run automatically when its workflow/script is first pushed, and can also be run manually from the Actions tab. This file intentionally uses `.github/workflows/main.yml`, the same path as the old `Refresh haevyre.com feed` workflow, so deploying the revamp replaces that legacy workflow instead of leaving two Actions behind.
 
 ## Local preview
 
