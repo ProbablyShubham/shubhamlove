@@ -1,32 +1,42 @@
-name: Refresh haevyre.com feed
+name: Refresh portfolio data
 
 on:
   schedule:
-    - cron: "17 6 1 * *"
+    - cron: '17 7 * * *'
   workflow_dispatch:
   push:
-    branches: [main]
+    paths:
+      - 'scripts/update_data.py'
+      - '.github/workflows/main.yml'
 
 permissions:
   contents: write
 
 jobs:
-  fetch:
+  refresh:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Check out repository
+        uses: actions/checkout@v4
 
-      - name: Fetch latest post from RSS
-        run: python3 scripts/fetch_feed.py
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
 
-      - name: Commit if changed
+      - name: Refresh cached portfolio data
+        run: python3 scripts/update_data.py
+
+      - name: Commit updated data if changed
         run: |
-          if [[ -n "$(git status --porcelain data/latest-post.json)" ]]; then
-            git config user.name  "feed-bot"
-            git config user.email "feed-bot@users.noreply.github.com"
-            git add data/latest-post.json
-            git commit -m "chore: refresh latest post"
-            git push
-          else
-            echo "No change."
+          if git diff --quiet -- data/n2o.json data/latest-post.json; then
+            echo 'No data changes to commit.'
+            exit 0
           fi
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/n2o.json data/latest-post.json
+          git commit -m 'Refresh portfolio data'
+          git push
