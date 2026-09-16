@@ -334,10 +334,61 @@
     </section>
   </main>
 
-  <div class="molecule-overlay" id="molecule-overlay" aria-hidden="true">
-    <div class="atmo-labels"><span>Troposphere</span><span>Stratosphere</span><span>Photolysis</span><span>NO + O₃ → NO₂ + O₂</span></div>
-    <div class="molecule">N₂O</div>
+  <div class="molecule-overlay" id="molecule-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="n2o-story-title" data-stage="0">
     <button type="button" class="molecule-close" aria-label="Close atmospheric animation">×</button>
+
+    <div class="chem-story">
+      <header class="chem-story-head">
+        <p class="chem-kicker">N₂O / atmospheric fate</p>
+        <h2 id="n2o-story-title">How nitrous oxide contributes to stratospheric ozone loss.</h2>
+        <p class="chem-deck">A simplified view of the ozone-depleting pathway. Most stratospheric N₂O is removed by photolysis; a smaller branch reacts with excited oxygen and forms NO.</p>
+      </header>
+
+      <div class="chem-stage">
+        <div class="atmo-field" aria-hidden="true">
+          <div class="atmo-band stratosphere"><span>Stratosphere</span></div>
+          <div class="atmo-band troposphere"><span>Troposphere</span></div>
+          <div class="tropopause"><span>Tropopause</span></div>
+
+          <div class="chem-token token-n2o">N₂O</div>
+          <div class="chem-token token-o1d">O(¹D)</div>
+          <div class="chem-token token-no no-a">NO</div>
+          <div class="chem-token token-no no-b">NO</div>
+          <div class="chem-token token-o3">O₃</div>
+          <div class="chem-token token-no2">NO₂</div>
+          <div class="chem-token token-o">O</div>
+          <div class="chem-token token-o2 o2-a">O₂</div>
+          <div class="chem-token token-o2 o2-b">O₂</div>
+
+          <div class="uv-mark"><span>hν</span><i></i><i></i><i></i></div>
+          <div class="reaction-arrow arrow-a">→</div>
+          <div class="reaction-arrow arrow-b">→</div>
+          <div class="ozone-cut"></div>
+
+          <div class="net-reaction">
+            <span>NET EFFECT</span>
+            <strong>O₃ + O → 2 O₂</strong>
+            <small>NO is regenerated and can continue the catalytic cycle.</small>
+          </div>
+        </div>
+
+        <div class="chem-caption" aria-live="polite">
+          <div class="chem-step"><span id="chem-step-no">01</span><i></i><span id="chem-step-name">Long-lived gas</span></div>
+          <p class="chem-equation" id="chem-equation">N₂O</p>
+          <p class="chem-explain" id="chem-explain">N₂O is stable enough in the lower atmosphere to persist for decades and be transported upward.</p>
+          <button type="button" class="chem-replay" id="chem-replay" hidden>Replay sequence ↻</button>
+        </div>
+      </div>
+
+      <ol class="chem-progress" aria-label="Animation stages">
+        <li class="active"><span>01</span>Transport</li>
+        <li><span>02</span>Stratosphere</li>
+        <li><span>03</span>NO formation</li>
+        <li><span>04</span>Ozone loss</li>
+        <li><span>05</span>NO regenerated</li>
+        <li><span>06</span>Net effect</li>
+      </ol>
+    </div>
   </div>
 
   <script type="module" src="js/main.js"></script>
