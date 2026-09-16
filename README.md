@@ -6,15 +6,20 @@ A single-page static portfolio hosted on GitHub Pages.
 
 - `index.html` — semantic page content and SEO metadata
 - `css/site.css` — layout, typography, responsive design, and visual system
-- `js/morph.js` — scroll-driven four-strand SVG morphing system
 - `js/climate.js` — live N2O, air-quality, and climate-model interactions
-- `js/main.js` — navigation, latest-writing card, and small interactions
+- `js/main.js` — navigation, persistent research-index rail, latest-writing card, and the hidden surname easter egg
 - `data/n2o.json` — cached NOAA Global Monitoring Laboratory N2O data
 - `data/latest-post.json` — cached latest post from haevyre.com
 - `scripts/update_data.py` — server-side data refresh used by GitHub Actions
 - `.github/workflows/main.yml` — scheduled data refresh workflow
 
 No framework or build step is required. GitHub Pages can serve the repository root directly.
+
+## Interface notes
+
+The portfolio intentionally avoids a large decorative SVG or chemistry modal. On desktop, a quiet fixed **Research index** rail tracks the active section and mirrors the live NOAA N₂O value while the Observatory is in view. On smaller screens the rail disappears and the normal navigation remains.
+
+The only hidden easter egg is the surname in the hero: it looks like ordinary text, but clicking it draws a small heart.
 
 ## Live data
 

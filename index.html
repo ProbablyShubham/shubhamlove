@@ -82,28 +82,31 @@
     </nav>
   </header>
 
+  <aside class="research-rail" id="research-rail" aria-hidden="true">
+    <div class="rail-rule"></div>
+    <p class="rail-kicker">Research index</p>
+    <div class="rail-current">
+      <span class="rail-number" id="rail-number">00</span>
+      <strong id="rail-title">Overview</strong>
+    </div>
+    <p class="rail-note" id="rail-note">Climate · agriculture · carbon markets</p>
+    <div class="rail-live" id="rail-live" hidden>
+      <span>Atmospheric N₂O</span>
+      <div><strong id="rail-n2o">—</strong><small> ppb</small></div>
+      <em>NOAA GML</em>
+    </div>
+    <div class="rail-coord"><span>39.95° N</span><span>75.16° W</span></div>
+  </aside>
+
   <main id="main">
-    <section class="hero section-shell" id="top" data-shape="baseline" data-section="top">
+    <section class="hero section-shell" id="top" data-section="top">
       <div class="hero-copy">
         <p class="kicker">Research · policy · tools</p>
         <h1>Shubham <span class="surname">Love</span></h1>
         <p class="hero-lede">Environmental policy researcher working across climate, agriculture and carbon markets.</p>
         <div class="hero-status">
           <p><span class="label">Currently</span><span>Research &amp; Policy Associate · IGSD</span></p>
-          <p><span class="label">Focus</span><span><button class="text-trigger" type="button" data-n2o-trigger>N₂O</button> · nitrogen · carbon markets · geospatial research</span></p>
-        </div>
-      </div>
-
-      <div class="hero-figure" aria-hidden="true">
-        <div class="plate">
-          <div class="plate-head"><span id="plate-index">Plate 00</span><span id="plate-state">baseline</span></div>
-          <svg id="morph" viewBox="0 0 420 420" focusable="false">
-            <path id="strand-0"></path>
-            <path id="strand-1"></path>
-            <path id="strand-2"></path>
-            <path id="strand-3"></path>
-          </svg>
-          <div class="plate-axis"><span>39.95° N</span><span>75.16° W</span></div>
+          <p><span class="label">Focus</span><span><span>N₂O</span> · nitrogen · carbon markets · geospatial research</span></p>
         </div>
       </div>
 
@@ -114,7 +117,7 @@
       </div>
     </section>
 
-    <section class="section section-shell" id="work" data-shape="map" data-section="work">
+    <section class="section section-shell" id="work" data-section="work">
       <header class="section-intro">
         <p class="section-number">01 / Selected work</p>
         <h2>Research is most useful when it can leave the document.</h2>
@@ -122,7 +125,7 @@
       </header>
 
       <div class="work-list">
-        <article class="work-item featured" data-shape="map">
+        <article class="work-item featured">
           <div class="work-index">01</div>
           <div class="work-main">
             <p class="work-type">Dashboard · carbon markets</p>
@@ -137,7 +140,7 @@
           </div>
         </article>
 
-        <article class="work-item" data-shape="nitrogen">
+        <article class="work-item">
           <div class="work-index">02</div>
           <div class="work-main">
             <p class="work-type">Research · nitrogen</p>
@@ -150,7 +153,7 @@
           </div>
         </article>
 
-        <article class="work-item" data-shape="nexus">
+        <article class="work-item">
           <div class="work-index">03</div>
           <div class="work-main">
             <p class="work-type">Working paper · research agenda</p>
@@ -163,7 +166,7 @@
           </div>
         </article>
 
-        <article class="work-item" data-shape="packages">
+        <article class="work-item">
           <div class="work-index">04</div>
           <div class="work-main">
             <p class="work-type">Open-source software · R</p>
@@ -178,7 +181,7 @@
       </div>
     </section>
 
-    <section class="section section-shell path-section" id="path" data-shape="helix" data-section="path">
+    <section class="section section-shell path-section" id="path" data-section="path">
       <header class="section-intro narrow">
         <p class="section-number">02 / Path</p>
         <h2>From the bench to the policy side of the same problems.</h2>
@@ -189,7 +192,7 @@
         <div class="path-column">
           <p class="path-label">Appointments</p>
           <ol class="timeline">
-            <li data-shape="policy"><time>2026—</time><div><h3>Institute for Governance and Sustainable Development</h3><p>Research &amp; Policy Associate · India Program</p></div></li>
+            <li><time>2026—</time><div><h3>Institute for Governance and Sustainable Development</h3><p>Research &amp; Policy Associate · India Program</p></div></li>
             <li><time>2025—26</time><div><h3>Kleinman Center for Energy Policy</h3><p>Research Assistant · Goldsmith Sustainable Agriculture Fund</p></div></li>
             <li><time>2025</time><div><h3>University of Pennsylvania</h3><p>Teaching Assistant · ENVS 5100 Proseminar</p></div></li>
             <li><time>2025</time><div><h3>IGSD</h3><p>Consultant · Washington, DC</p></div></li>
@@ -200,15 +203,15 @@
         <div class="path-column">
           <p class="path-label">Education</p>
           <ol class="timeline">
-            <li data-shape="globe"><time>2024—26</time><div><h3>University of Pennsylvania</h3><p>Master of Environmental Studies · Environmental Policy</p></div></li>
-            <li data-shape="helix"><time>2020—24</time><div><h3>University School of Biotechnology, GGSIPU</h3><p>BTech Biotechnology · functional genomics capstone in rice under nitrate and salinity stress</p></div></li>
-            <li data-shape="route"><time>2024</time><div><h3>Delhi → Philadelphia</h3><p>One flight and a change of field.</p></div></li>
+            <li><time>2024—26</time><div><h3>University of Pennsylvania</h3><p>Master of Environmental Studies · Environmental Policy</p></div></li>
+            <li><time>2020—24</time><div><h3>University School of Biotechnology, GGSIPU</h3><p>BTech Biotechnology · functional genomics capstone in rice under nitrate and salinity stress</p></div></li>
+            <li><time>2024</time><div><h3>Delhi → Philadelphia</h3><p>One flight and a change of field.</p></div></li>
           </ol>
         </div>
       </div>
     </section>
 
-    <section class="section observatory" id="observatory" data-shape="atmosphere" data-section="observatory">
+    <section class="section observatory" id="observatory" data-section="observatory">
       <div class="section-shell">
         <header class="section-intro observatory-intro">
           <p class="section-number">03 / Observatory</p>
@@ -274,7 +277,7 @@
       </div>
     </section>
 
-    <section class="section section-shell" id="notes" data-shape="rules" data-section="notes">
+    <section class="section section-shell" id="notes" data-section="notes">
       <header class="section-intro compact">
         <p class="section-number">04 / Notes</p>
         <h2>Writing beyond the memo.</h2>
@@ -290,7 +293,7 @@
       </article>
     </section>
 
-    <section class="section section-shell" id="elsewhere" data-shape="stars" data-section="elsewhere">
+    <section class="section section-shell" id="elsewhere" data-section="elsewhere">
       <header class="section-intro compact">
         <p class="section-number">05 / Elsewhere</p>
         <h2>Things that do not fit neatly on a CV.</h2>
@@ -307,7 +310,7 @@
           <h3>Wildlife &amp; birds</h3>
           <p>Photography, species identification and an old habit of noticing what is moving at the edge of the frame.</p>
         </article>
-        <article data-shape="tiger">
+        <article>
           <span class="elsewhere-id">First project · age 12</span>
           <h3>Thundertigers</h3>
           <p>A youth-led tiger conservation campaign started with a schoolfriend: campaigning, fundraising and a first website built around an environmental question.</p>
@@ -316,7 +319,7 @@
       </div>
     </section>
 
-    <section class="section section-shell contact-section" id="contact" data-shape="signature" data-section="contact">
+    <section class="section section-shell contact-section" id="contact" data-section="contact">
       <p class="section-number">06 / Contact</p>
       <div class="contact-grid">
         <div>
@@ -333,63 +336,6 @@
       </footer>
     </section>
   </main>
-
-  <div class="molecule-overlay" id="molecule-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="n2o-story-title" data-stage="0">
-    <button type="button" class="molecule-close" aria-label="Close atmospheric animation">×</button>
-
-    <div class="chem-story">
-      <header class="chem-story-head">
-        <p class="chem-kicker">N₂O / atmospheric fate</p>
-        <h2 id="n2o-story-title">How nitrous oxide contributes to stratospheric ozone loss.</h2>
-        <p class="chem-deck">A simplified view of the ozone-depleting pathway. Most stratospheric N₂O is removed by photolysis; a smaller branch reacts with excited oxygen and forms NO.</p>
-      </header>
-
-      <div class="chem-stage">
-        <div class="atmo-field" aria-hidden="true">
-          <div class="atmo-band stratosphere"><span>Stratosphere</span></div>
-          <div class="atmo-band troposphere"><span>Troposphere</span></div>
-          <div class="tropopause"><span>Tropopause</span></div>
-
-          <div class="chem-token token-n2o">N₂O</div>
-          <div class="chem-token token-o1d">O(¹D)</div>
-          <div class="chem-token token-no no-a">NO</div>
-          <div class="chem-token token-no no-b">NO</div>
-          <div class="chem-token token-o3">O₃</div>
-          <div class="chem-token token-no2">NO₂</div>
-          <div class="chem-token token-o">O</div>
-          <div class="chem-token token-o2 o2-a">O₂</div>
-          <div class="chem-token token-o2 o2-b">O₂</div>
-
-          <div class="uv-mark"><span>hν</span><i></i><i></i><i></i></div>
-          <div class="reaction-arrow arrow-a">→</div>
-          <div class="reaction-arrow arrow-b">→</div>
-          <div class="ozone-cut"></div>
-
-          <div class="net-reaction">
-            <span>NET EFFECT</span>
-            <strong>O₃ + O → 2 O₂</strong>
-            <small>NO is regenerated and can continue the catalytic cycle.</small>
-          </div>
-        </div>
-
-        <div class="chem-caption" aria-live="polite">
-          <div class="chem-step"><span id="chem-step-no">01</span><i></i><span id="chem-step-name">Long-lived gas</span></div>
-          <p class="chem-equation" id="chem-equation">N₂O</p>
-          <p class="chem-explain" id="chem-explain">N₂O is stable enough in the lower atmosphere to persist for decades and be transported upward.</p>
-          <button type="button" class="chem-replay" id="chem-replay" hidden>Replay sequence ↻</button>
-        </div>
-      </div>
-
-      <ol class="chem-progress" aria-label="Animation stages">
-        <li class="active"><span>01</span>Transport</li>
-        <li><span>02</span>Stratosphere</li>
-        <li><span>03</span>NO formation</li>
-        <li><span>04</span>Ozone loss</li>
-        <li><span>05</span>NO regenerated</li>
-        <li><span>06</span>Net effect</li>
-      </ol>
-    </div>
-  </div>
 
   <script type="module" src="js/main.js"></script>
 </body>
